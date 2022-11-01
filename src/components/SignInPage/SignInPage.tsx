@@ -47,8 +47,11 @@ export default function SignInPage() {
     return () => setNeedErrorMessage(false)
   }, [error, form, needErrorMessage])
 
+  useEffect(() => {
+    if (loggedUser) history.goBack()
+  }, [history, loggedUser])
+
   if (loggedUser) {
-    history.goBack()
     return <Alert message="You already logged" type="warning" style={{ width: '50%', margin: 'auto' }} />
   }
 
