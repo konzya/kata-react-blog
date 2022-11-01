@@ -47,7 +47,6 @@ export default function SignUpPage() {
     if (data?.user.token && data?.user.username) {
       dispatch(setLogInStatus({ newToken: data.user.token, username: data.user.username }))
       message.success('success')
-      history.goBack()
     }
   }, [data, dispatch, history])
 
