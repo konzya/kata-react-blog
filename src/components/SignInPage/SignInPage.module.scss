@@ -1,0 +1,7 @@
+@use '../../variablesMixins.scss' as v;
+
+.span {
+  @include v.regular-12px;
+  color: v.$grey-7;
+  
+}

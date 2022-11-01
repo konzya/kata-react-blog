@@ -1,0 +1,122 @@
+@use '../../variablesMixins.scss' as v;
+
+.app-header {
+  background-color: v.$background-color-base;
+
+  &__body {
+    max-width: 1440px;
+    display: flex;
+    padding: 16px 22px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__spin {
+    margin-right: 13px;
+  }
+
+  &__logo {
+    @include v.H6;
+    user-select: none;
+    color: v.$heading-color;
+
+    &:hover {
+      @media (hover: hover) {
+        color: v.$success-color;
+      }
+    }
+
+    &:focus {
+      color: v.$success-color;
+    }
+  }
+
+  &__right-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__profile {
+
+    &:focus .app-header__username {
+      color: v.$success-color;
+    }
+  }
+
+  &__username {
+    @include v.H6;
+    color: v.$heading-color;
+    margin-right: 13px;
+
+    &:hover {
+      @media (hover: hover) {
+        color: v.$success-color;
+      }
+    }
+  }
+
+  &__avatar {
+    width: 46px;
+    height: 46px;
+    transition: transform 0.3s ease-in;
+
+    &:hover {
+      @media (hover: hover) {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__button {
+    @include v.H6;
+    color: v.$heading-color;
+    padding: 8px 18px;
+    height: auto;
+    border-radius: 5px;
+
+    &--small {
+      @include v.font-size-base;
+      padding: 6px 10px;
+    }
+
+    &--out {
+      color: v.$text-color;
+      border-color: v.$text-color;
+
+      &:hover {
+        @media (hover: hover) {
+          background-color: v.$highlight-color;
+          color: v.$background-color-base;
+          border-color: v.$highlight-color;
+        }
+      }
+
+      &:focus {
+        background-color: v.$highlight-color;
+        color: v.$background-color-base;
+        border-color: v.$highlight-color;
+      }
+    }
+
+    &--success {
+      border: 1px solid v.$success-color;
+      color: v.$success-color;
+
+      &:hover {
+        @media (hover: hover) {
+          color: v.$background-color-base;
+          border-color: v.$success-color;
+          background-color: v.$success-color;
+        }
+      }
+
+      &:focus {
+        color: v.$background-color-base;
+        border-color: v.$success-color;
+        background-color: v.$success-color;
+      }
+    }
+  }
+}

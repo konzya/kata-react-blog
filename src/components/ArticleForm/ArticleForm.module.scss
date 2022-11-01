@@ -1,0 +1,79 @@
+@use '../../variablesMixins.scss' as v;
+
+.form {
+  background-color: v.$background-color-base;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  &__header {
+    @include v.semibold;
+    color: v.$grey-9;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.tag-list__item {
+  display: flex;
+  gap: 15px;
+  width: 50%;
+  margin-bottom: 15px;
+  align-items: center;
+
+  & input {
+    max-width: 300px;
+    flex-shrink: 0;
+  }
+}
+
+.button {
+  @include v.regular-16px;
+  height: 40px;
+  border-radius: 4px;
+
+  &--delete {
+    color: v.$highlight-color;
+    border-color: v.$highlight-color;
+
+    &:hover {
+      @media (hover: hover) {
+        background-color: v.$highlight-color;
+        color: v.$background-color-base;
+        border-color: v.$highlight-color;
+      }
+    }
+
+    &:focus {
+      background-color: v.$highlight-color;
+      color: v.$background-color-base;
+      border-color: v.$highlight-color;
+    }
+  }
+
+  &--add {
+    color: v.$info-color;
+    border-color: v.$info-color;
+
+    &:hover {
+      @media (hover: hover) {
+        background-color: v.$info-color;
+        color: v.$background-color-base;
+        border-color: v.$info-color;
+      }
+    }
+
+    &:focus {
+      background-color: v.$info-color;
+      color: v.$background-color-base;
+      border-color: v.$info-color;
+    }
+  }
+
+  &--submit {
+    padding-left: 141px;
+    padding-right: 141px;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,7 @@
+@use './variablesMixins.scss' as v;
+
+.app {
+  background-color: v.$background-color;
+  min-height: 100vh;
+  
+}

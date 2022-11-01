@@ -1,0 +1,76 @@
+$background-color: #ebeef3;
+$background-color-base: white;
+$heading-color: black;
+$success-color: #52c41a;
+$info-color: #1890ff;
+$highlight-color: #F5222D;
+$text-color: rgba(0, 0, 0, 0.75);
+$text-color-secondary: rgba(0, 0, 0, 0.5);
+$grey-9: #262626;
+$grey-8: #595959;
+$grey-7: #8C8C8C;
+$grey-6: #bfbfbf;
+
+@mixin H6 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin H5 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin font-size-sm {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+@mixin font-size-base {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin semibold {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin regular-12px {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin regular-14px {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin regular-16px {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}

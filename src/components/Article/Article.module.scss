@@ -1,0 +1,219 @@
+@use '../../variablesMixins.scss' as v;
+
+.article {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  background-color: v.$background-color-base;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+  border-radius: 5px;
+  padding: 15px 14px 24px 19px;
+  width: 100%;
+
+  &__preview {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-side {
+    max-width: 682px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    margin-right: 13px;
+    &:focus {
+      filter: brightness(0.7);
+    }
+  }
+
+  &__title {
+    @include v.H5;
+    color: v.$info-color;
+    display: flex;
+    max-width: 600px;
+    margin-right: 13px;
+
+    .article__link & {
+      margin-right: 0;
+    }
+
+    &--preview:hover {
+      @media (hover: hover) {
+        filter: brightness(0.7);
+      }
+    }
+  }
+
+  &__checkbox {
+    appearance: none;
+    background-image: url(heart.svg);
+    width: 16px;
+    height: 15px;
+    margin-right: 5px;
+    margin-top: 8px;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 17px 15px;
+
+    &:focus {      
+      outline: 1px solid red;
+      outline-offset: 2px;
+      border-radius: 50%;
+    }
+
+    &:checked {
+      background-image: url(heartFull.svg);
+    }
+  }
+
+  &__favorites {
+    @include v.font-size-sm;
+    color: v.$text-color;
+    margin-right: 20px;
+    margin-top: 5px;
+  }
+
+  &__tag-list {
+    margin-bottom: 4px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__tag {
+    @include v.font-size-sm;
+    color: v.$text-color-secondary;
+    background-color: v.$background-color-base;
+    line-height: 15px;
+    height: 23px;
+    border: 1px solid v.$text-color-secondary;
+    border-radius: 2px;
+    padding: 3px 6px;
+    margin: 0;
+  }
+
+  &__description {
+    @include v.font-size-sm;
+    color: v.$text-color;
+    margin: 0;
+  }
+
+  &__right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__author {
+    @include v.H6;
+    color: v.$heading-color;
+  }
+
+  &__date {
+    @include v.font-size-sm;
+    color: v.$text-color-secondary;
+  }
+
+  &__avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  &__body {
+    @include v.font-size-base;
+    color: v.$text-color;
+  }
+
+  &__flex-wrapper {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__button {
+    @include v.font-size-base;
+    padding: 6px 17px;
+    border-radius: 5px;
+    height: 34px;
+
+    &--delete {
+      color: v.$highlight-color;
+      border-color: v.$highlight-color;
+
+      &:hover {
+        @media (hover: hover) {
+          color: v.$background-color-base;
+          background-color: v.$highlight-color;
+          border-color: v.$highlight-color;
+        }
+      }
+      &:focus {
+        color: v.$background-color-base;
+        background-color: v.$highlight-color;
+        border-color: v.$highlight-color;
+      }
+    }
+
+    &--edit {
+      color: v.$success-color;
+      border-color: v.$success-color;
+
+      &:hover {
+        @media (hover: hover) {
+          color: v.$background-color-base;
+          background-color: v.$success-color;
+          border-color: v.$success-color;
+        }
+      }
+    }
+  }
+}
+
+.popover {
+  width: 220px;
+
+  &__header {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    margin-bottom: 13px;
+  }
+
+  &__alert {
+    width: 14px;
+    height: 14px;
+  }
+
+  &__message {
+    @include v.regular-16px;
+    color: v.$grey-8;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    @include v.regular-14px;
+    border-radius: 4px;
+    padding: 1px 8px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,58 @@
+@use './variablesMixins.scss' as v;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+  margin: 0;
+}
+
+.ant-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.ant-list-empty-text {
+  min-height: 100%;
+}
+
+.ant-list-pagination {
+  margin-top: 27px;
+  padding-bottom: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.ant-pagination-item-active {
+  background-color: #1890ff;
+  color: white;
+  border-radius: 4px;
+}
+
+.ant-pagination-item-active a {
+  color: white;
+}
+
+.ant-pagination-item-active a:hover {
+  color: black;
+}
+
+.ant-form-item-label>label {
+  @include v.regular-14px;
+  color: v.$grey-9;
+}
+
+.ant-input-affix-wrapper>input.ant-input::placeholder, .ant-input::placeholder {
+  @include v.regular-16px;
+  color: v.$grey-6;  
+}
+
+.ant-input, .ant-input-affix-wrapper {
+  @include v.regular-16px;
+  color: v.$grey-9;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.ant-form-item-control-input-content {
+  text-align: center;
+}

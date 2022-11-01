@@ -1,0 +1,11 @@
+@use '../../variablesMixins.scss' as v;
+.checkbox {
+  text-align: left;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 8px;
+}
+
+.span {
+  @include v.regular-12px;
+  color: v.$grey-7;
+}
