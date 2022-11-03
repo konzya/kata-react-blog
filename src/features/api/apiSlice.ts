@@ -103,6 +103,7 @@ export const apiSlice = createApi({
         method: 'POST',
         body,
       }),
+      invalidatesTags: ['User'],
     }),
     signUp: builder.mutation<IUser, IUser>({
       query: (body) => ({
@@ -110,6 +111,7 @@ export const apiSlice = createApi({
         method: 'POST',
         body,
       }),
+      invalidatesTags: ['User'],
     }),
     getCurrentUser: builder.query<IUser, void>({
       query: () => ({
