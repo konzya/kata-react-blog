@@ -102,16 +102,14 @@ export const apiSlice = createApi({
         url: '/users/login',
         method: 'POST',
         body,
-      }),
-      invalidatesTags: ['User'],
+      }),      
     }),
     signUp: builder.mutation<IUser, IUser>({
       query: (body) => ({
         url: '/users',
         method: 'POST',
         body,
-      }),
-      invalidatesTags: ['User'],
+      }),      
     }),
     getCurrentUser: builder.query<IUser, void>({
       query: () => ({

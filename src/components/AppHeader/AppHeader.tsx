@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Avatar, Button, Spin } from 'antd'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
@@ -11,7 +11,13 @@ export default function AppHeader() {
   const history = useHistory()
   const loggedUser = useAppSelector(selectLoggedUser)
   const dispatch = useAppDispatch()
-  const { data, isFetching } = useGetCurrentUserQuery()
+  const { data, refetch, isFetching } = useGetCurrentUserQuery()
+
+  useEffect(() => {
+    if (loggedUser) {
+      refetch()
+    }
+  }, [loggedUser, refetch])
 
   const noauth = (
     <>
